@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="studnetBean" class="com.powernode.spring6.bean.Studnet">
+        <property name="name" value="张三"/>
+        <!--级联属性赋值：【1：顺序不能颠倒】【2：要给get这个方法】        -->
+        <property name="clazz" ref="clazzBean2"></property>
+        <!--现在给定的全部属性值都是null-->
+        <property name="clazz.name" value="高三十八班"></property>
+        <!--级联属性赋值，本质是通过get得到之后，在进行其属性的赋值-->
+
+    </bean>
+
+    <bean id="clazzBean"  class="com.powernode.spring6.bean.Clazz">
+        <property name="name" value="高三一班"/>
+    </bean>
+
+    <bean id="clazzBean2"  class="com.powernode.spring6.bean.Clazz"></bean>
+</beans>

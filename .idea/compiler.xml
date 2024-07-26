@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring6-002-first" />
+        <module name="spring-012-aop-realapp" />
+        <module name="review-annotation" />
+        <module name="factory-method" />
+        <module name="xinCe" />
+        <module name="spring6-003-dependency-injection" />
+        <module name="spring6-010-spring-aspectj-aop-anno" />
+        <module name="spring6-007-circular-denpendency" />
+        <module name="spring6-015-junit" />
+        <module name="spring-013-tx-bank" />
+        <module name="spring6-001-revelation" />
+        <module name="spring6-005-instantiation" />
+        <module name="static-proxy" />
+        <module name="simple-factory" />
+        <module name="spring6-1000-Ceshi" />
+        <module name="dynamic-proxy-jdk" />
+        <module name="spiring-006-bean-lifecycle" />
+        <module name="spring6-004-scope" />
+        <module name="spring-009-jdbc" />
+        <module name="myspring" />
+        <module name="spring6-016-sm" />
+        <module name="fuxi-001" />
+        <module name="jj-ceshi" />
+        <module name="dynamic-proxy-cglib" />
+        <module name="spring6-008-annotation" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

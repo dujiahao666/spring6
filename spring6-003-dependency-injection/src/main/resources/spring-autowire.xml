@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="orser" class="com.powernode.spring6.service.OrderService">
+        <property name="orderDao" ref="orderDao"></property>
+    </bean>
+
+    <!-- 根据名字进行自动装配   -->
+    <!-- 注意：自动装配也是基于set方式实现的   -->
+    <bean id="orser2" class="com.powernode.spring6.service.OrderService" autowire="byName"/>
+
+    <!-- id一般也叫做bean的名称    -->
+    <!-- 根据名称自动装配的时候，被注入的对象的bean的id不能随便写，怎么写？set方法的方法名去掉set，剩下单词首字母小写。   -->
+    <bean id="orderDao" class="com.powernode.spring6.dao.OrderDao"/>
+
+
+
+<!--byType   ：也是基于set方法的 -->
+<!--根据类型进行自动装配的时候，在有效的配置文件当中，某种类型的实例只能有一个【不然不知道注入那个了】    -->
+    <bean id="userdaoBean" class="com.powernode.spring6.dao.UserDao"></bean>
+    <bean id="vipDaoBean" class="com.powernode.spring6.dao.VipDao"/>
+
+    <bean id="customerServiceBean" class="com.powernode.spring6.service.CustomerService">
+        <constructor-arg index="0" ref="userdaoBean"/>
+        <constructor-arg index="1" ref="vipDaoBean"/>
+    </bean>
+
+
+
+
+    <bean id="customerServiceBean2" class="com.powernode.spring6.service.CustomerService" autowire="byType"/>
+</beans>

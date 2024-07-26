@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="stu" class="com.powernode.service.Student">
+        <property name="name" value="杜嘉豪"/>
+        <property name="age" value="21"/>
+    </bean>
+
+    <bean id="wifeaa" class="com.powernode.service.Wife">
+        <property name="shu" value="6"/>
+        <property name="zhang" value="漂亮"/>
+        <property name="wai" value="36d"/>
+    </bean>
+    
+    
+    <bean id="datejia" class="com.powernode.service.DateFactoryBean">
+<!--        <property name="strDate" value="2023-12-11"/>-->
+        <constructor-arg index="0" value="2024-01-01"/>
+    </bean>
+    <bean id="chu" class="com.powernode.service.Nao">
+        <property name="date" ref="datejia"/>
+    </bean>
+
+    <bean class="com.powernode.service.HouProcesss"/>
+
+    <context:component-scan base-package="com.powernode"/>
+</beans>

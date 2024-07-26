@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- factory-method 属性是指定工厂类的静态方法。也就是告诉Spring框架，调用这个方法可以获取Bean   -->
+ <!--   <bean id="starBean" class="com.powernode.spring6.bean.StarFactory" factory-method="get"/>
+
+
+    <bean id="gunFactory" class="com.powernode.spring6.bean.GunFactory"/>
+    <bean id="gun" factory-bean="gunFactory" factory-method="get"/>  最终通过这个区获取  -->
+
+
+<!--    <bean id="py" class="com.powernode.spring6.bean.PersonFactory"/>-->
+
+   <!-- <bean id="stu" class="com.powernode.spring6.bean.Stundent">
+        <property name="name" value="时光匆匆"/>
+        <property name="date" ref="zhen"/>
+    </bean>-->
+
+   <!-- <bean id="da" class="com.powernode.spring6.bean.DateFactory">
+&lt;!&ndash;        <property name="date" value="2024-04-15"/>&ndash;&gt;
+        <constructor-arg index="0" value="2024-04-25"/>
+    </bean>-->
+
+
+    <!--<bean id="da" class="com.powernode.spring6.bean.ZiTime">
+        <property name="time" value="2028-01-19"/>
+    </bean>
+    <bean id="zhen" factory-bean="da" factory-method="get"/>-->
+
+
+    <!--<bean id="zi" class="com.powernode.spring6.bean.Zi" >
+        <property name="name" >
+            <value/>
+        </property>
+    </bean>-->
+
+   <!-- <bean id="fu" class="com.powernode.spring6.bean.Fu">
+        <property name="name" value="杜西峰"/>
+        <property name="zi">
+            <bean class="com.powernode.spring6.bean.Zi">
+                <property name="name" value="月月"/>
+            </bean>
+        </property>
+    </bean>-->
+
+    <bean id="userSe" class="com.powernode.spring6.bean.UserService" autowire="byName"></bean>
+    <bean id="woqu" class="com.powernode.spring6.bean.User"/>
+
+</beans>

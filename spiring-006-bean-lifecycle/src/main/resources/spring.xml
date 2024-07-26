@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--
+        Spring容器只对singleton的Bean进行完整的声明周期管理
+        如果是prototype作用域的Bean,Spring容器只负责将该Bean初始化完毕。等客户端程序一旦获取到Bean之后，Spring容器就不再管理该对象的声明周期了
+        【就是管理到bean后处理器的after之后】拿到之后 使用之后就不归自己管理了（前面8步还是自己的）
+        -->
+
+    <bean id="user" class="com.powernode.spring6.bean.User" init-method="initMethod" destroy-method="destoryMethod" scope="singleton">
+        <property name="name" value="不想上周三的课"/>
+    </bean>
+
+    <bean class="com.powernode.spring6.bean.LogBeanpostProcessor"/>
+
+
+    <bean id="www" class="com.powernode.spring6.bean.Wo">
+        <property name="name" value="嘉嘉"/>
+    </bean>
+
+
+</beans>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dogBean" class="com.powernode.spring6.bean.Dog">
+        <property name="name" value="嘉嘉"/>
+        <property name="age" value="21"/>
+        <property name="birth" value="Sun Apr 21 21:50:35 CST 2024"/>
+    </bean>
+
+
+
+    <bean id="dogBean3" class="com.powernode.spring6.bean.Dog"
+          p:age="21"
+          p:birth="Sun Apr 21 21:50:35 CST 2024">
+        <property name="name" value="罡罡"/>
+    </bean>
+
+
+
+
+    <!--
+        第一步：在spring的配置文件头部添加p命名空间。 xmlns:p="http://www.springframework.org/schema/p"
+        第二步：使用
+        -->
+    <bean id="dogBean2" class="com.powernode.spring6.bean.Dog"
+          p:name="君君"
+          p:age="21"
+          p:birth-ref="birthBean">
+    </bean>
+    <!-- 这里获取的是当前系统时间  【无参构造方法】   -->
+    <bean id="birthBean" class="java.util.Date"/>
+
+</beans>
